@@ -32,11 +32,12 @@ public class TicTacToe {
                 System.out.println(result);
                 break;
             }
-
-            Random random = new Random();
-            int cpuPosition = random.nextInt(9) + 1;
+            printGameBoard(gameBoard);
+            System.out.println("Enter your placement (1-9) : ");
+            int cpuPosition = scanner.nextInt();
             while (playerPositions.contains(cpuPosition)||cpuPositions.contains(cpuPosition)) {
-               cpuPosition = random.nextInt(9)+1;
+                System.out.println("position taken! Enter a correct Position");
+                cpuPosition = scanner.nextInt();
             }
             placePiece(gameBoard, cpuPosition, "cpu");
 
